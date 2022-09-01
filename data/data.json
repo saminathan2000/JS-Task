@@ -1,0 +1,30 @@
+{
+    "financialRiskCal":[
+        {
+            "no":4,
+            "label":"What percentage of your data is personnel data(PII)?",
+            "value":40
+        },
+        {
+            "no":5,
+            "label":"What percentage of your data is sensitive intellectual property?",
+            "value":20
+        },
+        {
+            "no":6,
+            "label":"What percentage of your data is other sensitive data?",
+            "value":20
+        },
+        {
+            "no":7,
+            "label":"What percentage of your data is all other corporate non-sensitive data?",
+            "value":20
+        },
+        {
+            "no":0,
+            "label":"Total",
+            "value":100
+        }
+
+    ]
+}

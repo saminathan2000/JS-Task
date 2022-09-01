@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.5/dist/css/uikit.min.css" />
+</head>
+<body>
+    
+    <section class="uk-section">
+        <div class="uk-container">
+            <div class="wrapper">
+                <a class="uk-button uk-button-default uk-position-center" href="#modal-container" uk-toggle>Click here</a>
+                <div id="modal-container" class="uk-modal-container" uk-modal>
+                    <div class="uk-modal-dialog uk-modal-body">
+
+
+                        {%for fincalc in data.financialRiskCal%}
+                            
+                            <div class="uk-flex">
+                                <span class="label uk-width-4-5">
+                                    {%if fincalc.no != 0 %}
+                                    <span class="uk-badge uk-background-secondary uk-margin-right uk-padding-small">{{fincalc.no}}</span>
+                                    <span class="uk-text-secondary uk-text-normal">{{fincalc.label}}</span>
+                                    {%else%}
+                                    <h3 class="uk-margin-right uk-text-bolder uk-text-right">{{fincalc.label}}</h3>
+                                    {%endif%}
+                                </span>
+                                <div class="uk-width-1-5 ">
+                                    <div class="uk-inline">
+                                        <span class="uk-form-icon uk-form-icon-flip" >%</span>
+                                        {%if fincalc.no != 0 %}
+                                        <input class="uk-input finInput" onblur="findTotal()" type="number" value={{fincalc.value}}>
+                                        {%else%}
+                                        <input class="uk-input " id="totalFinCal" type="number" value={{fincalc.value}}>
+                                        {%endif%}
+                                    </div>
+                                </div>
+                            </div>
+                        <hr>
+                        {%endfor%}
+                        
+                        <button class="uk-modal-close uk-position-bottom-center uk-margin-bottom" type="button" uk-close></button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.5/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.5/dist/js/uikit-icons.min.js"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
