@@ -19,11 +19,6 @@
             "no":7,
             "label":"What percentage of your data is all other corporate non-sensitive data?",
             "value":20
-        },
-        {
-            "no":0,
-            "label":"Total",
-            "value":100
         }
 
     ]

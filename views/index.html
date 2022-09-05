@@ -16,36 +16,31 @@
             <div class="wrapper">
                 <a class="uk-button uk-button-default uk-position-center" href="#modal-container" uk-toggle>Click here</a>
                 <div id="modal-container" class="uk-modal-container" uk-modal>
-                    <div class="uk-modal-dialog uk-modal-body">
-
+                    <div class="uk-modal-dialog uk-modal-body uk-text-secondary">
 
                         {%for fincalc in data.financialRiskCal%}
                             
-                            <div class="uk-flex">
-                                <span class="label uk-width-4-5">
-                                    {%if fincalc.no != 0 %}
-                                    <span class="uk-badge uk-background-secondary uk-margin-right uk-padding-small">{{fincalc.no}}</span>
-                                    <span class="uk-text-secondary uk-text-normal">{{fincalc.label}}</span>
-                                    {%else%}
-                                    <h3 class="uk-margin-right uk-text-bolder uk-text-right">{{fincalc.label}}</h3>
-                                    {%endif%}
+                            <div class="uk-flex finRow ">
+                                <span class="label  uk-flex-middle uk-flex">
+                                    <span class="uk-badge uk-background-secondary ">{{fincalc.no}}</span>
+                                    <span class="uk-text-secondary fincalc-label uk-text-normal uk-padding">{{fincalc.label}}</span>
                                 </span>
-                                <div class="uk-width-1-5 ">
-                                    <div class="uk-inline">
+                                <div class="">
+                                    <div class="uk-inline fin-input">
                                         <span class="uk-form-icon uk-form-icon-flip" >%</span>
-                                        {%if fincalc.no != 0 %}
-                                        <input class="uk-input finInput" onblur="findTotal()" type="number" value={{fincalc.value}}>
-                                        {%else%}
-                                        <input class="uk-input " id="totalFinCal" type="number" value={{fincalc.value}}>
-                                        {%endif%}
+                                        <input class="uk-input finInput" onkeydown="nullValidation(event)" onblur="findTotal()" type="tel" value={{fincalc.value}}>
                                     </div>
                                 </div>
                             </div>
                         <hr>
                         {%endfor%}
-                        
-                        <button class="uk-modal-close uk-position-bottom-center uk-margin-bottom" type="button" uk-close></button>
-                        
+                        <div class="uk-flex-right uk-flex total-flex">
+                            <h3 class="uk-margin-right uk-inline uk-margin-right uk-text-bolder ">Total</h3>
+                            <div class="uk-inline">
+                                    <span class="uk-form-icon uk-form-icon-flip" >%</span>
+                                    <input class="uk-input uk-disabled " id="totalFinCal" type="number" value="100.0">
+                            </div>  
+                        </div>      
                     </div>
                 </div>
             </div>
@@ -59,3 +54,5 @@
 </body>
 
 </html>
+
+{# hjb?jkkkkkkkkkk #}

@@ -6,8 +6,35 @@
     color: #fff!important;
     border-radius:0px 10px 10px 0px;
 }
+.total-flex{
+    height: 40px;
+}
+.fincalc-label{
+    padding:0px 20px!important;
+}
 .uk-input{
     border: 0px !important;
     border-radius: 10px!important;
+    width: 200px!important;
 }
-  
+.uk-badge{
+    min-width: 45px!important;
+    min-height: 45px!important;
+    font-size: 16px!important;
+}
+
+.finRow{
+    justify-content: space-between;
+}
+//from tablet portrait
+@media screen and (max-width:959px) { 
+    .finRow{
+        flex-direction: column;
+    }
+    .fin-input{
+        float: right;
+    }
+    .fincalc-label{
+        padding:30px 5px!important;
+    }
+}
