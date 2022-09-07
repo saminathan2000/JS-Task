@@ -12,6 +12,9 @@ function nullValidation(event){
     if(event.target.value.length==1 && event.key=="Backspace"){
         event.target.value="00";
     }
-    
+    if(event.target.value + event.key>100){
+        event.target.value="100";
+        event.preventDefault();
+    }
 }
 
